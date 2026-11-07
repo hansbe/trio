@@ -39,6 +39,12 @@ node --test
 Spillet blir da tilgjengelig på `https://<brukernavn>.github.io/trio/` og kan legges til på hjemskjermen
 (det fungerer også offline etter første besøk).
 
+## Publisere med Vercel
+
+Importer repoet på vercel.com (Framework Preset: *Other*, ingen build-kommando). Skru på
+*Analytics* i prosjektet for å få anonym besøksstatistikk – skriptet er allerede lagt inn i `index.html`
+og gjør ingenting på andre verter (f.eks. GitHub Pages). Se [personvern.html](personvern.html).
+
 ## Om opphavsrett og varemerker
 
 Spillmekanikken bak trio-spill (å finne tre kort der hver egenskap er lik eller ulik) er en matematisk idé

@@ -158,3 +158,15 @@ dialog .btn { display: block; width: 100%; margin-top: 16px; }
 .examples p { margin: 4px 0 0; font-size: 13px; }
 .ok { color: var(--good); }
 .bad { color: var(--bad); }
+
+.footnote { text-align: center; margin: 12px 0 0; font-size: 12px; }
+.footnote a { color: var(--muted); }
+
+/* Personvernside */
+.page { max-width: 640px; margin: 0 auto; padding: 24px 18px calc(32px + env(safe-area-inset-bottom)); line-height: 1.55; -webkit-user-select: text; user-select: text; }
+.page h1 { font-size: 26px; margin: 8px 0 4px; }
+.page h2 { font-size: 17px; margin: 24px 0 4px; }
+.page p, .page li { color: var(--ink); }
+.page .meta { color: var(--muted); font-size: 14px; margin-top: 0; }
+.page a { color: var(--c2); }
+.page .back { display: inline-block; margin-bottom: 8px; text-decoration: none; font-weight: 700; color: var(--ink); }

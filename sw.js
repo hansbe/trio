@@ -1,6 +1,6 @@
 // Enkel offline-støtte: hurtigbufrer spillets filer, henter nytt i bakgrunnen.
-const CACHE = 'trio-v1';
-const FILES = ['./', 'index.html', 'style.css', 'game.js', 'logic.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
+const CACHE = 'trio-v2';
+const FILES = ['./', 'index.html', 'style.css', 'game.js', 'logic.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png', 'personvern.html'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
@@ -10,6 +10,7 @@ self.addEventListener('activate', (e) => {
 });
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
+  if (new URL(e.request.url).pathname.startsWith('/_vercel/')) return; // statistikk skal alltid gå rett til nett
   e.respondWith(
     caches.match(e.request).then((hit) => {
       const net = fetch(e.request).then((res) => {

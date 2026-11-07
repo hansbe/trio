@@ -13,6 +13,11 @@
   <link rel="apple-touch-icon" href="icon-180.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="style.css">
+  <!-- Vercel Web Analytics: informasjonskapselfri, anonym besøksstatistikk (se personvern.html) -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <!-- Felles mønstre for stripet fyll -->
@@ -56,6 +61,7 @@
       <p>Trykk på tre kort for å velge en trio. Finn trioer til bunken er tom. Finnes det ingen trio på bordet, legges tre nye kort ut automatisk.</p>
       <p class="small">Hint viser ett kort i en trio (trykk igjen for et kort til). Hint koster 15 sekunder.</p>
       <button class="btn" value="close" autofocus>Spill</button>
+      <p class="footnote"><a href="personvern.html">Personvern</a></p>
     </form>
   </dialog>
 
