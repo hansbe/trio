@@ -1,5 +1,5 @@
 // Enkel offline-støtte: hurtigbufrer spillets filer, henter nytt i bakgrunnen.
-const CACHE = 'trio-v2';
+const CACHE = 'trio-v3';
 const FILES = ['./', 'index.html', 'style.css', 'game.js', 'logic.js', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png', 'personvern.html'];
 
 self.addEventListener('install', (e) => {
