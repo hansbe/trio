@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Trio – et raskt mønsterspill for én spiller. Finn tre kort der hver egenskap er lik på alle eller ulik på alle.">
+  <title>Trio</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Felles mønstre for stripet fyll -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <pattern id="stripes-0" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="2" fill="var(--c0)"/></pattern>
+      <pattern id="stripes-1" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="2" fill="var(--c1)"/></pattern>
+      <pattern id="stripes-2" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="2" fill="var(--c2)"/></pattern>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <header class="bar">
+      <h1 class="logo" aria-label="Trio">tri<span>o</span></h1>
+      <div class="stats" role="status" aria-live="polite">
+        <div class="stat"><span class="label">Tid</span><span id="time" class="value">0:00</span></div>
+        <div class="stat"><span class="label">Funnet</span><span id="found" class="value">0</span></div>
+        <div class="stat"><span class="label">Bunke</span><span id="deck" class="value">69</span></div>
+      </div>
+      <button id="helpBtn" class="icon-btn" aria-label="Regler">?</button>
+    </header>
+
+    <main id="board" class="board" aria-label="Kort på bordet"></main>
+
+    <footer class="bar bottom">
+      <button id="hintBtn" class="btn">Hint</button>
+      <div id="toast" class="toast" aria-live="assertive"></div>
+      <button id="newBtn" class="btn ghost">Nytt spill</button>
+    </footer>
+  </div>
+
+  <dialog id="rules">
+    <form method="dialog">
+      <h2>Slik spiller du</h2>
+      <p>Hvert kort har fire egenskaper: <b>antall</b> (1, 2 eller 3), <b>form</b>, <b>farge</b> og <b>fyll</b>.</p>
+      <p>En <b>trio</b> er tre kort der hver egenskap enten er <b>lik på alle tre</b> eller <b>ulik på alle tre</b>.</p>
+      <div class="examples">
+        <div><div id="exOk" class="ex-row"></div><p class="ok">✓ Trio: alt er ulikt, bortsett fra fargen som er lik.</p></div>
+        <div><div id="exBad" class="ex-row"></div><p class="bad">✗ Ikke trio: to kort har samme fyll, det tredje har ikke.</p></div>
+      </div>
+      <p>Trykk på tre kort for å velge en trio. Finn trioer til bunken er tom. Finnes det ingen trio på bordet, legges tre nye kort ut automatisk.</p>
+      <p class="small">Hint viser ett kort i en trio (trykk igjen for et kort til). Hint koster 15 sekunder.</p>
+      <button class="btn" value="close" autofocus>Spill</button>
+    </form>
+  </dialog>
+
+  <dialog id="done">
+    <form method="dialog">
+      <h2>Ferdig!</h2>
+      <p id="doneText"></p>
+      <p id="bestText" class="small"></p>
+      <button class="btn" value="again">Spill igjen</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>

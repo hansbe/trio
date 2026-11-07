@@ -1,0 +1,17 @@
+{
+  "name": "Trio",
+  "short_name": "Trio",
+  "description": "Finn tre kort der hver egenskap er lik på alle eller ulik på alle.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4efe6",
+  "theme_color": "#f4efe6",
+  "lang": "nb",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
